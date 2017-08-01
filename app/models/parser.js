@@ -2,11 +2,11 @@ function Parser() {
 }
 
 Parser.prototype._splitUserInput = function(userInput) {
-  var splitInput = userInput.split(" ")
-  return splitInput
+  return userInput.split(" ")
 };
 
-Parser.prototype.selectKeyword = function(splitInput) {
+Parser.prototype.selectKeyword = function(userInput) {
+  var splitInput = this._splitUserInput(userInput)
   if (splitInput.includes("sad")) {
     return "sad"
   } else if (splitInput.includes("happy")) {
