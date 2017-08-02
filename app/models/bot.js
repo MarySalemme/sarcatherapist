@@ -1,5 +1,5 @@
 
-  function Bot() {
+  function Bot(parser) {
     this._inputType = null
 
     this._greetingKeyWords = ["hi", "hello", "salutations"]
@@ -8,7 +8,13 @@
     this.greetingResponse = "Oh, it's you. Let's make this quick"
     this.curseResponse = "Go Freud yourself."
     this.genericResponse = "Have you tried drinking more?"
+
+    this._parser = parser;
   }
+
+  Bot.prototype.getParser = function () {
+    return this._parser;
+  };
 
   Bot.prototype.checkForGreeting = function(userInput) {
     var self = this

@@ -1,7 +1,8 @@
 describe("Bot", function() {
 
   beforeEach(function() {
-    bot = new Bot();
+    parser = {}
+    bot = new Bot(parser);
   });
 
   greetingInput = ["hi", "lil", "shrink", "bot"]
@@ -93,4 +94,9 @@ describe("Bot", function() {
     })
   });
 
+  describe("getParser", function() {
+    it("returns the parser", function() {
+      expect(bot.getParser()).toEqual({});
+    });
+  });
 });
