@@ -9,31 +9,10 @@ describe("Parser", function() {
     });
   });
 
-  describe("selectKeyword", function() {
-    var input = "I feel sad";
-    it ("assigns a keyword", function() {
-    expect(parser.selectKeyword(input)).toEqual("sad")
-    });
-  });
-
-  describe("selectKeyword", function() {
-    var input = "I feel happy";
-    it ("assigns a keyword", function() {
-    expect(parser.selectKeyword(input)).toEqual("happy")
-    });
-  });
-
-  describe("selectKeyword", function() {
-    var input = "I feel ok";
-    it ("assigns a keyword", function() {
-    expect(parser.selectKeyword(input)).toEqual("ok")
-    });
-  });
-
-  describe("selectKeyword", function() {
-    var input = "I feel angry";
-    it ("assigns a keyword", function() {
-    expect(parser.selectKeyword(input)).toEqual("meh")
+  describe("entireParseProcess", function() {
+    it("returns the final process user input", function() {
+      var input = "I feel happy"
+      expect(parser.entireParseProcess(input)).toEqual(["I", "feel", "happy"]);
     });
   });
 });
