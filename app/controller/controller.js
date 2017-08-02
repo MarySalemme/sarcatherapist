@@ -1,4 +1,5 @@
 var self = this
+
 function Controller() {
   this.bot = new Bot();
   this.parser = new Parser();
@@ -6,5 +7,5 @@ function Controller() {
 };
 
 Controller.prototype.setUpListener = function() {
-  self.inputListener()
+  se.inputListener()
 }
