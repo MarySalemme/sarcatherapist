@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
+
 
     <meta charset="utf-8">
     <title>Sarca-therapist</title>
@@ -13,7 +14,7 @@
       body {
         font-family: 'Advent Pro', sans-serif;
         text-align: center;
-        color: #C6C8CC;
+        color: black;
         background-image: url("../../lib/assets/rococo-bkg.jpg");
       }
       #log {
@@ -33,9 +34,11 @@
       }
       h1 {
         font-size: 80px;
+        color: #C6C8CC;
       }
       h2 {
         font-size: 36px;
+        color: #C6C8CC;
       }
     </style>
   </head>
@@ -52,6 +55,11 @@
 
       <div class="wrapper"><input type='text' id='textbox' placeholder="Enter text here..."></input><button>Enter</button></div>
     </div>
+    <script src="../jquery.js"></script>
+    <script src="../models/bot.js"></script>
+    <script src="../models/parser.js"></script>
+    <script src="../controller/controller.js"></script>
+    <script src="../../index.js"></script>
   </body>
 
 </html>
