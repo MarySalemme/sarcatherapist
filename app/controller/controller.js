@@ -7,5 +7,5 @@ function Controller() {
 };
 
 Controller.prototype.setUpListener = function() {
-  se.inputListener()
+  self.inputListener()
 }
