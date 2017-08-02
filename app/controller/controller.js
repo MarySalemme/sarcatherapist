@@ -6,5 +6,5 @@ function Controller() {
 };
 
 Controller.prototype.setUpListener = function() {
-  self.inputListener()
+  document.inputListener()
 }
