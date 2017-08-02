@@ -16,4 +16,7 @@ Parser.prototype._splitUserInput = function(userInput) {
 //   } else {
 //     return "meh"
 //   }
+
+Parser.prototype.entireParseProcess = function (userInput) {
+  return this._splitUserInput(userInput);
 };
