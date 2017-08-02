@@ -1,7 +1,7 @@
 var inputListener;
 
 	$(document).ready(function(){
-		inputListener = function() {
+		this.inputListener = function() {
 		$('#textbox').on("keydown", function(e) {
 			if (e.which == '13') {
 				userInput = $('#textbox').val();
