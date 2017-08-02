@@ -12,6 +12,4 @@ describe("controller", function() {
       expect(controller.parser).not.toBeNull();
     });
   });
-
-
 })

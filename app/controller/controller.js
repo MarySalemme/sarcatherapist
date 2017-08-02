@@ -13,9 +13,7 @@
         if (e.which == '13') {
           userInput = jQuery('#textbox').val();
           if (userInput != '') {
-            self._createElements(document);
-            self._setElements(document);
-            self._appendElements(document);
+            self._createResponse(document);
           } else {
             console.log("empty field")
           };
@@ -38,6 +36,12 @@
   Controller.prototype._appendElements = function(document) {
     log.appendChild(userPara);
     log.appendChild(botPara);
+  };
+
+  Controller.prototype._createResponse = function(document) {
+    this._createElements(document);
+    this._setElements(document);
+    this._appendElements(document);
   };
 
 
