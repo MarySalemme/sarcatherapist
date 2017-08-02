@@ -1,10 +1,9 @@
 (function(exports) {
 
   function Controller() {
-    this.bot = new Bot();
     this.parser = new Parser();
+    this.bot = new Bot(this.parser);
   };
-
 
   Controller.prototype.inputListener = function(jQuery, document) {
     var self = this
@@ -12,11 +11,7 @@
       jQuery('#textbox').on("keydown", function(e) {
         if (e.which == '13') {
           userInput = jQuery('#textbox').val();
-          if (userInput != '') {
             self._createResponse(document);
-          } else {
-            console.log("empty field")
-          };
         };
       });
     });
@@ -30,7 +25,13 @@
 
   Controller.prototype._setElements = function(document) {
     userPara.innerHTML = userInput;
-    botPara.innerHTML = "Have you tried drinking more?"
+    if (userInput != '') {
+      // ON HOLD - waiting for Bot/Parser integration
+      this.bot.categoriseUserInput(userInput);
+      botPara.innerHTML = this.bot.produceResponse();
+    } else {
+      botPara.innerHTML = "How can I tell you to drink more if you don't ask me a question?!"
+    };
   };
 
   Controller.prototype._appendElements = function(document) {
