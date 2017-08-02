@@ -5,7 +5,7 @@ describe("Bot", function() {
   });
 
   greetingInput = ["hi", "lil", "shrink", "bot"]
-  curseInput = ["your", "advice", "is", "shit"]
+  curseInput = ["your", "advice", "is", "substitute"]
   genericInput = ["that's", "a", "loada", "psychobabble"]
 
   describe("greetingKeyWords", function() {

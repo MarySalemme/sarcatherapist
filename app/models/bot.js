@@ -3,7 +3,7 @@
     this._inputType = null
 
     this._greetingKeyWords = ["hi", "hello", "salutations"]
-    this._curseKeyWords = ["fuck", "shit", "cock"]
+    this._curseKeyWords = ["substitute", "substitute", "substitute"]
 
     this.greetingResponse = "Oh, it's you. Let's make this quick"
     this.curseResponse = "Go Freud yourself."
