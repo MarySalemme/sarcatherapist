@@ -7,6 +7,8 @@
     "lib": "lib"
   },
   "dependencies": {
+    "express": "4.15.3",
+    "foobar": "^1.1.0",
     "jasmine": "^2.7.0"
   },
   "devDependencies": {},
@@ -25,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/MarySalemme/sarca-therapist/issues"
   },
+  "scripts": {
+    "start": "node index.js"
+},
   "homepage": "https://github.com/MarySalemme/sarca-therapist#readme"
 }
