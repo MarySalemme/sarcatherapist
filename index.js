@@ -1,16 +1,13 @@
+
+var http = require("http");
+var server = http.createServer(function(request, response) {
+  response.writeHead(200, {"Content-Type": "text/html"});
+  response.end();
+});
+
+server.listen(8080);
+
 window.onload = function() {
   var controller = new Controller();
   controller.inputListener($, document);
 };
-
-var port = process.env.PORT || 8000
-
-let server = require('http').Server(app);
-
-app.get('/', function(req, res, next){
-    res.sendStatus(200);
-});
-
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
