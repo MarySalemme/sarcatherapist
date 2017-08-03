@@ -14,10 +14,12 @@
           userInput = jQuery('#textbox').val();
           if (userInput != '') {
             self._createResponse(document);
+            jQuery("#textbox").val('');
           } else {
             console.log("empty field")
           };
         };
+        self._chatLogAutoScroll(jQuery);
       });
     });
   };
@@ -44,6 +46,13 @@
     this._appendElements(document);
   };
 
-
+  Controller.prototype._chatLogAutoScroll = function (jQuery) {
+    var div = jQuery('#log');
+    setInterval(function(){
+      var pos = div.scrollTop();
+      div.scrollTop(pos + 2);
+    }, 0)
+  };
+  
   exports.Controller = Controller
 })(this);
