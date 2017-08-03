@@ -11,8 +11,10 @@
       jQuery('#textbox').on("keydown", function(e) {
         if (e.which == '13') {
           userInput = jQuery('#textbox').val();
-            self._createResponse(document);
+          self._createResponse(document);
+          jQuery("#textbox").val('');
         };
+        self._chatLogAutoScroll(jQuery);
       });
     });
   };
@@ -34,13 +36,23 @@
 
   Controller.prototype._appendElements = function(document) {
     log.appendChild(userPara);
-    log.appendChild(botPara);
+    setTimeout(function() {
+      log.appendChild(botPara);
+    }, 1000);
   };
 
   Controller.prototype._createResponse = function(document) {
     this._createElements(document);
     this._setElements(document);
     this._appendElements(document);
+  };
+
+  Controller.prototype._chatLogAutoScroll = function (jQuery) {
+    var div = jQuery('#log');
+    setInterval(function(){
+      var pos = div.scrollTop();
+      div.scrollTop(pos + 2);
+    }, 0)
   };
 
   exports.Controller = Controller

@@ -18,11 +18,13 @@
         background-image: url("../../lib/assets/rococo-bkg.jpg");
       }
       #log {
-        height: 200px;
+        height: 10em;
+        /*line-height: 10em;*/
         width: 50%;
         margin: 0 auto;
         border-style: solid;
         background: white;
+        overflow-y: scroll;
       }
       .wrapper {
         width: 50%;
@@ -53,12 +55,14 @@
 
       </div>
 
-      <div class="wrapper"><input type='text' id='textbox' placeholder="Enter text here..."></input><button>Enter</button></div>
+      <div class="wrapper"><input type='text' id='textbox' placeholder="Enter text here..."></input></div>
     </div>
     <script src="../models/bot.js"></script>
     <script src="../models/parser.js"></script>
     <script src="../controller/controller.js"></script>
     <script src="../../index.js"></script>
+
+    </script>
   </body>
 
 </html>
