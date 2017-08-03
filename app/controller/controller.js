@@ -37,7 +37,9 @@
 
   Controller.prototype._appendElements = function(document) {
     log.appendChild(userPara);
-    log.appendChild(botPara);
+    setTimeout(function() {
+      log.appendChild(botPara);
+    }, 1000);
   };
 
   Controller.prototype._createResponse = function(document) {
@@ -53,6 +55,6 @@
       div.scrollTop(pos + 2);
     }, 0)
   };
-  
+
   exports.Controller = Controller
 })(this);
