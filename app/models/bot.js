@@ -10,7 +10,7 @@
     var testParser = this._getParser()
     var processedArray = testParser.entireParseProcess(userInput);
     this._categoriseUserInput(processedArray);
-    return this.giveApproriateResponse();
+    return this._pickAppropriateResponse();
   };
 
 
@@ -55,7 +55,7 @@
     return genericResponse
   };
 
-  Bot.prototype.giveApproriateResponse = function () {
+  Bot.prototype._pickAppropriateResponse = function () {
     hash = {"curse": this._sampledCurseResponse(), "greeting": this._sampledGreetingResponse(), "generic": this._sampledGenericResponse()}
     return hash[this._inputType]
   }
