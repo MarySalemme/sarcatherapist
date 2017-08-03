@@ -5,9 +5,9 @@
     this._greetingKeyWords = ["hi", "hello", "salutations"]
     this._curseKeyWords = ["substitute", "substitute", "substitute"]
 
-    this.greetingResponse = "Oh, it's you. Let's make this quick"
-    this.curseResponse = "Go Freud yourself."
-    this.genericResponse = "Have you tried drinking more?"
+    // this.greetingResponse = "Oh, it's you. Let's make this quick"
+    // this.curseResponse = "Go Freud yourself."
+    // this.genericResponse = "Have you tried drinking more?"
     this._parser = parser;
   }
 
@@ -43,15 +43,38 @@
 
   Bot.prototype._sampleResponse = function() {
     if (this._inputType === "curse") {
-      return this.curseResponse;
+      // return this.curseResponse;
+    return this._sampledCurseResponse()
     } else if (this._inputType === "greeting") {
-      return this.greetingResponse;
+      // return this.greetingResponse;
+      return this._sampledGreetingResponse()
     } else {
-      return this.genericResponse;
+      // return this.genericResponse;
+      return this._sampledGenericResponse()
     }
   };
 
+  Bot.prototype._getParser = function () {
+    return this._parser;
+  };
 
-    Bot.prototype._getParser = function () {
-      return this._parser;
-    };
+  Bot.prototype._sampledCurseResponse = function () {
+    var curseResponse = "Go Freud yourself."
+    if (this._inputType === "curse") {
+      return curseResponse;
+    }
+  };
+
+  Bot.prototype._sampledGreetingResponse = function () {
+    var greetingResponse = "Oh, it's you. Let's make this quick"
+   if (this._inputType === "greeting") {
+    return greetingResponse
+  }
+  };
+
+  Bot.prototype._sampledGenericResponse = function () {
+    var genericResponse = "Have you tried drinking more?"
+   if (this._inputType === "greeting") {
+    return genericResponse
+  }
+  };
