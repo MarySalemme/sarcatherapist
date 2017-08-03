@@ -27,7 +27,7 @@
     userPara.innerHTML = userInput;
     if (userInput != '') {
       // ON HOLD - waiting for Bot/Parser integration
-      this.bot.categoriseUserInput(userInput);
+      // this.bot.categoriseUserInput(userInput);
       botPara.innerHTML = this.bot.produceResponse();
     } else {
       botPara.innerHTML = "How can I tell you to drink more if you don't ask me a question?!"
@@ -44,7 +44,6 @@
     this._setElements(document);
     this._appendElements(document);
   };
-
 
   exports.Controller = Controller
 })(this);
