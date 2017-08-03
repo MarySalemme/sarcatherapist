@@ -38,7 +38,7 @@
     }
   };
 
-  Bot.prototype.produceResponse = function() {
+  Bot.prototype.sampleResponse = function() {
     if (this._inputType === "curse") {
       return this.curseResponse;
     } else if (this._inputType === "greeting") {
@@ -46,4 +46,12 @@
     } else {
       return this.genericResponse;
     }
+  };
+
+  Bot.prototype.produceResponse = function (userInput) {
+    console.log(userInput)
+    var testParser = this.getParser()
+    var processedArray = testParser.entireParseProcess(userInput);
+    this.categoriseUserInput(processedArray);
+    return this.sampleResponse();
   };
