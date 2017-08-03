@@ -8,7 +8,6 @@
     this.greetingResponse = "Oh, it's you. Let's make this quick"
     this.curseResponse = "Go Freud yourself."
     this.genericResponse = "Have you tried drinking more?"
-
     this._parser = parser;
   }
 
@@ -49,7 +48,6 @@
   };
 
   Bot.prototype.produceResponse = function (userInput) {
-    console.log(userInput)
     var testParser = this.getParser()
     var processedArray = testParser.entireParseProcess(userInput);
     this.categoriseUserInput(processedArray);
