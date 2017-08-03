@@ -2,7 +2,8 @@ describe("Bot", function() {
 
   beforeEach(function() {
     parser = {}
-    bot = new Bot(parser);
+    mockParser = {entireParseProcess: ["This", "is", "a", "test", "sentence"]}
+    bot = new Bot(mockParser);
   });
 
   greetingInput = ["hi", "lil", "shrink", "bot"]
@@ -67,36 +68,52 @@ describe("Bot", function() {
     })
   })
 
-  describe("produceResponse", function() {
+  describe("sampleResponse", function() {
     describe("when user input type is a greeting", function(){
       it("will give greeting response", function(){
         bot.categoriseUserInput(greetingInput)
-        expect(bot.produceResponse()).toEqual("Oh, it's you. Let's make this quick")
+        expect(bot.sampleResponse()).toEqual("Oh, it's you. Let's make this quick")
       })
     })
   });
 
-  describe("produceResponse", function() {
+  describe("sampleResponse", function() {
     describe("when user input type is a curse", function(){
       it("will give curse response", function(){
         bot.categoriseUserInput(curseInput)
-        expect(bot.produceResponse()).toEqual("Go Freud yourself.")
+        expect(bot.sampleResponse()).toEqual("Go Freud yourself.")
       })
     })
   });
 
-  describe("produceResponse", function() {
+  describe("sampleResponse", function() {
     describe("when user input type is generic", function(){
       it("will give a generic response", function(){
         bot.categoriseUserInput(genericInput)
-        expect(bot.produceResponse()).toEqual("Have you tried drinking more?")
+        expect(bot.sampleResponse()).toEqual("Have you tried drinking more?")
       })
     })
   });
 
   describe("getParser", function() {
     it("returns the parser", function() {
-      expect(bot.getParser()).toEqual({});
+      expect(bot.getParser()).toEqual({entireParseProcess: ["This", "is", "a", "test", "sentence"]});
     });
+  });
+
+  describe("feedUserInput", function() {
+    it("runs the user input through the parser", function() {
+      var response = bot.getParser()
+      var arrayFromInput = response.entireParseProcess;
+      expect(arrayFromInput).toEqual(["This", "is", "a", "test", "sentence"])
+    })
+  });
+
+  describe("produceResponse", function() {
+    it("produces a response for the user", function() {
+      var bot2 = new Bot(new Parser())
+      var userInput = "I live in London"
+      expect(bot2.produceResponse(userInput)).toEqual("Have you tried drinking more?")
+    })
   });
 });
