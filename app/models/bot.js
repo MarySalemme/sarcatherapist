@@ -48,7 +48,6 @@
   };
 
   Bot.prototype.produceResponse = function (userInput) {
-    console.log(userInput)
     var testParser = this.getParser()
     var processedArray = testParser.entireParseProcess(userInput);
     this.categoriseUserInput(processedArray);

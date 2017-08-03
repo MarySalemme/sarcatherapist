@@ -26,9 +26,7 @@
   Controller.prototype._setElements = function(document) {
     userPara.innerHTML = userInput;
     if (userInput != '') {
-      // ON HOLD - waiting for Bot/Parser integration
-      // this.bot.categoriseUserInput(userInput);
-      botPara.innerHTML = this.bot.produceResponse();
+      botPara.innerHTML = this.bot.produceResponse(userInput.toLowerCase());
     } else {
       botPara.innerHTML = "How can I tell you to drink more if you don't ask me a question?!"
     };
