@@ -1,0 +1,29 @@
+{
+  "name": "sarcatherapist",
+  "version": "1.0.0",
+  "description": "a sarcastic psychotherapist",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jasmine": "^2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarySalemme/sarca-therapist.git"
+  },
+  "author": "a-team-has-no-name",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarySalemme/sarca-therapist/issues"
+  },
+  "homepage": "https://github.com/MarySalemme/sarca-therapist#readme"
+}
