@@ -12,33 +12,37 @@
     this._parser = parser;
   }
 
-  Bot.prototype.getParser = function () {
-    return this._parser;
+  Bot.prototype.produceResponse = function (userInput) {
+    var testParser = this._getParser()
+    var processedArray = testParser.entireParseProcess(userInput);
+    this._categoriseUserInput(processedArray);
+    return this._sampleResponse();
   };
 
-  Bot.prototype.checkForGreeting = function(userInput) {
+
+  Bot.prototype._checkForGreeting = function(userInput) {
     var self = this
     return userInput.some(function(input) { return self._greetingKeyWords.includes
     (input) })
   };
 
-  Bot.prototype.checkForCurse = function(userInput) {
+  Bot.prototype._checkForCurse = function(userInput) {
     var self = this
     return userInput.some(function(input) { return self._curseKeyWords.includes
     (input) })
   };
 
-  Bot.prototype.categoriseUserInput = function(userInput) {
-    if (this.checkForGreeting(userInput)) {
+  Bot.prototype._categoriseUserInput = function(userInput) {
+    if (this._checkForGreeting(userInput)) {
       this._inputType = "greeting"
-    } else if (this.checkForCurse(userInput)) {
+    } else if (this._checkForCurse(userInput)) {
       this._inputType = "curse"
     } else {
       this._inputType = "generic"
     }
   };
 
-  Bot.prototype.sampleResponse = function() {
+  Bot.prototype._sampleResponse = function() {
     if (this._inputType === "curse") {
       return this.curseResponse;
     } else if (this._inputType === "greeting") {
@@ -48,10 +52,7 @@
     }
   };
 
-  Bot.prototype.produceResponse = function (userInput) {
-    console.log(userInput)
-    var testParser = this.getParser()
-    var processedArray = testParser.entireParseProcess(userInput);
-    this.categoriseUserInput(processedArray);
-    return this.sampleResponse();
-  };
+
+    Bot.prototype._getParser = function () {
+      return this._parser;
+    };
