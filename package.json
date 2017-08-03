@@ -8,9 +8,11 @@
   },
   "dependencies": {
     "express": "4.15.3",
+    "finalhandler": "^1.0.3",
     "foobar": "^1.1.0",
     "http-server": "^0.10.0",
-    "jasmine": "^2.7.0"
+    "jasmine": "^2.7.0",
+    "serve-static": "^1.12.3"
   },
   "devDependencies": {},
   "scripts": {
