@@ -1,6 +1,4 @@
-
-
- var greetKey = [
+var greetKey = [
   "hi",
   "hey",
   "howdy",
