@@ -1,9 +1,9 @@
 
 
   function Bot(parser) {
-    this._inputType = null,
-    this._greetingKeyWords = ["hi"]
-    this._curseKeyWords = ["substitute", "substitute", "substitute"],
+    this._inputType = null
+    this._greetingKeyWords = greetKey
+    this._curseKeyWords = ["substitute", "substitute", "substitute"]
     this._parser = parser
   }
 

@@ -8,7 +8,6 @@
   "yo",
   "hiya",
   "aloha",
-  "g'day",
   "ciao",
   "sup",
   "bonjour",
@@ -19,6 +18,24 @@
   "ahoy",
   "elloello"
 ]
+
+var seriousKey = [
+ "suicide",
+ "suicidal",
+ "woe",
+ "misery",
+ "sorrow",
+ "grief",
+ "anhedonia",
+ "suffering",
+ "distress",
+ "torment"
+]
+
+var seriousResponse = [
+  
+]
+
 
 var greetResponse = [
   "Oh, it's you let's make this quick",
