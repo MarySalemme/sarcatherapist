@@ -1,55 +1,61 @@
 
   function Bot(parser) {
     this._inputType = null
-
     this._greetingKeyWords = ["hi", "hello", "salutations"]
     this._curseKeyWords = ["substitute", "substitute", "substitute"]
-
-    this.greetingResponse = "Oh, it's you. Let's make this quick"
-    this.curseResponse = "Go Freud yourself."
-    this.genericResponse = "Have you tried drinking more?"
     this._parser = parser;
   }
 
-  Bot.prototype.getParser = function () {
-    return this._parser;
+  Bot.prototype.produceResponse = function (userInput) {
+    var testParser = this._getParser()
+    var processedArray = testParser.entireParseProcess(userInput);
+    this._categoriseUserInput(processedArray);
+    return this._pickAppropriateResponse();
   };
 
-  Bot.prototype.checkForGreeting = function(userInput) {
+
+  Bot.prototype._checkForGreeting = function(userInput) {
     var self = this
     return userInput.some(function(input) { return self._greetingKeyWords.includes
     (input) })
   };
 
-  Bot.prototype.checkForCurse = function(userInput) {
+  Bot.prototype._checkForCurse = function(userInput) {
     var self = this
     return userInput.some(function(input) { return self._curseKeyWords.includes
     (input) })
   };
 
-  Bot.prototype.categoriseUserInput = function(userInput) {
-    if (this.checkForGreeting(userInput)) {
+  Bot.prototype._categoriseUserInput = function(userInput) {
+    if (this._checkForGreeting(userInput)) {
       this._inputType = "greeting"
-    } else if (this.checkForCurse(userInput)) {
+    } else if (this._checkForCurse(userInput)) {
       this._inputType = "curse"
     } else {
       this._inputType = "generic"
     }
   };
 
-  Bot.prototype.sampleResponse = function() {
-    if (this._inputType === "curse") {
-      return this.curseResponse;
-    } else if (this._inputType === "greeting") {
-      return this.greetingResponse;
-    } else {
-      return this.genericResponse;
-    }
+  Bot.prototype._getParser = function () {
+    return this._parser;
   };
 
-  Bot.prototype.produceResponse = function (userInput) {
-    var testParser = this.getParser()
-    var processedArray = testParser.entireParseProcess(userInput);
-    this.categoriseUserInput(processedArray);
-    return this.sampleResponse();
+  Bot.prototype._sampledCurseResponse = function () {
+    var curseResponse = "Go Freud yourself."
+      return curseResponse;
   };
+
+  Bot.prototype._sampledGreetingResponse = function () {
+    var greetingResponse = "Oh, it's you. Let's make this quick"
+    return greetingResponse
+  };
+
+  Bot.prototype._sampledGenericResponse = function () {
+    var genericResponse = "Have you tried drinking more?"
+    return genericResponse
+  };
+
+  Bot.prototype._pickAppropriateResponse = function () {
+    hash = {"curse": this._sampledCurseResponse(), "greeting": this._sampledGreetingResponse(), "generic": this._sampledGenericResponse()}
+    return hash[this._inputType]
+  }
