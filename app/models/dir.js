@@ -17,6 +17,14 @@ var greetKey = [
   "elloello"
 ]
 
+var greetResponse = [
+  "Oh, it's you let's make this quick",
+  "Come into my cyber-office",
+  "Not you again",
+  "I have issues. You have issues. Let's chat"
+]
+
+
 var seriousKey = [
  "suicide",
  "suicidal",
@@ -31,18 +39,48 @@ var seriousKey = [
 ]
 
 var seriousResponse = [
-  
+  "Time to refill your prozac"
+]
+
+var genericResponse = [
+  "Have you tried drinking more?",
+  "Have you tried getting over yourself?",
+  "What am I, psychic? Tell me how you *feel*",
+  "How are you feeling - I don't have all day"
+]
+
+var yesKey = [
+  "yes",
+  "yep",
+  "yeah",
+  "okay",
+  "sure",
+  "certainly",
+  "absolutely",
+  "alright"
+]
+
+var yesResponse = [
+  "Well, time's up then",
+  "Sure, sure"
 ]
 
 
-var greetResponse = [
-  "Oh, it's you let's make this quick",
-  "Come into my cyber-office",
-  "Not you again",
-  "I have issues. You have issues. Let's chat"
+
+var mildNegativeKey = [
+  "tired",
+  "bored",
+  "distracted",
+  "stressed",
+  "weary",
+  "exhausted",
+  "low",
+  "down",
+  "blue"
 ]
 
-
-// var genericResponse = [
-//   "Therapy is for the weak"
-// ]
+var mildNegativeResponse = [
+  "There is no cure for your disease",
+  "Take a break: go to the pub",
+  "Maybe you're just a depressive",
+]
