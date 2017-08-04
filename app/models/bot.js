@@ -1,9 +1,10 @@
 
+
   function Bot(parser) {
-    this._inputType = null
-    this._greetingKeyWords = ["hi", "hello", "salutations"]
-    this._curseKeyWords = ["substitute", "substitute", "substitute"]
-    this._parser = parser;
+    this._inputType = null,
+    this._greetingKeyWords = ["hi"]
+    this._curseKeyWords = ["substitute", "substitute", "substitute"],
+    this._parser = parser
   }
 
   Bot.prototype.produceResponse = function (userInput) {
@@ -46,7 +47,7 @@
   };
 
   Bot.prototype._sampledGreetingResponse = function () {
-    var greetingResponse = "Oh, it's you. Let's make this quick"
+    var greetingResponse = greetResponse[Math.floor(Math.random() * greetResponse.length)];
     return greetingResponse
   };
 
