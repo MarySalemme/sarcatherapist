@@ -1,8 +1,8 @@
 (function(exports) {
 
-  function Controller() {
-    this.parser = new Parser();
-    this.bot = new Bot(this.parser);
+  function Controller(parser = new Parser(), bot = new Bot(parser)) {
+    this.parser = parser;
+    this.bot = bot;
   };
 
   Controller.prototype.inputListener = function(jQuery, document) {

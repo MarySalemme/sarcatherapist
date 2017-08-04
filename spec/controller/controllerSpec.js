@@ -1,5 +1,8 @@
 describe("controller", function() {
-  var controller = new Controller();
+
+    mockParser = { entireParseProcess: ["I", "hate", "my", "life"] }
+    mockBot = { produceResponse: "Great I have to work now"}
+    var controller = new Controller(mockParser, mockBot);
 
   describe("attributes", function() {
     it("creates a new bot", function() {
@@ -10,4 +13,4 @@ describe("controller", function() {
       expect(controller.parser).not.toBeNull();
     });
   });
-})
+});
