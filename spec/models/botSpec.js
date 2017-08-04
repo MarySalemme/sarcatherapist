@@ -72,7 +72,7 @@ describe("Bot", function() {
     describe("when user input type is a greeting", function(){
       it("will give greeting response", function(){
         bot._categoriseUserInput(greetingInput)
-        expect(bot._pickAppropriateResponse()).toEqual("Oh, it's you. Let's make this quick")
+        expect(greetResponse).toContain(bot._pickAppropriateResponse())
       })
     })
   });
@@ -90,7 +90,7 @@ describe("Bot", function() {
     describe("when user input type is generic", function(){
       it("will give a generic response", function(){
         bot._categoriseUserInput(genericInput)
-        expect(bot._pickAppropriateResponse()).toEqual("Have you tried drinking more?")
+        expect(genericResponse).toContain(bot._pickAppropriateResponse())
       })
     })
   });
@@ -108,6 +108,4 @@ describe("Bot", function() {
       expect(arrayFromInput).toEqual(["This", "is", "a", "test", "sentence"])
     })
   });
-
-
 });
