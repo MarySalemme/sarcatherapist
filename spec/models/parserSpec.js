@@ -1,11 +1,11 @@
 describe("Parser", function() {
 
   var parser = new Parser();
+  var userInput = "I feel happy";
 
-  describe("_splitUserInput", function() {
-    var input = "I feel sad";
-    it ("splits the sentence into words", function() {
-    expect(parser._splitUserInput(input)).toEqual(["I", "feel", "sad"])
+  describe("entireParseProcess", function() {
+    it ("returns the parsed response", function() {
+    expect(parser.entireParseProcess(userInput)).toEqual(["I", "feel", "happy"])
     });
   });
 });
