@@ -1,10 +1,10 @@
+var self = this
 
-
-  function Bot(parser) {
+  function Bot(parser, dictionary) {
     this._inputType = null,
-    this._greetingKeyWords = ["hi"]
     this._curseKeyWords = ["substitute", "substitute", "substitute"],
     this._parser = parser
+    this._dictionary = dictionary
   }
 
   Bot.prototype.produceResponse = function (userInput) {
@@ -16,14 +16,14 @@
 
 
   Bot.prototype._checkForGreeting = function(userInput) {
-    var self = this
-    return userInput.some(function(input) { return self._greetingKeyWords.includes
+    var botSelf = this
+    return userInput.some(function(input) { return botSelf._greetingKeyWords.includes
     (input) })
   };
 
   Bot.prototype._checkForCurse = function(userInput) {
-    var self = this
-    return userInput.some(function(input) { return self._curseKeyWords.includes
+    var botSelf = this
+    return userInput.some(function(input) { return botSelf._curseKeyWords.includes
     (input) })
   };
 
@@ -47,7 +47,7 @@
   };
 
   Bot.prototype._sampledGreetingResponse = function () {
-    var greetingResponse = greetResponse[Math.floor(Math.random() * greetResponse.length)];
+    var greetingResponse = this._dictionary.greetResponse[Math.floor(Math.random() * dictionary.greetResponse.length)];
     return greetingResponse
   };
 

@@ -10,11 +10,11 @@ describe("Bot", function() {
   curseInput = ["your", "advice", "is", "substitute"]
   genericInput = ["that's", "a", "loada", "psychobabble"]
 
-  describe("_greetingKeyWords", function() {
-    it("it will be of the type: array", function(){
-      expect(bot._greetingKeyWords.constructor).toEqual(Array)
-    })
-  });
+  // describe("_greetingKeyWords", function() {
+  //   it("it will be of the type: array", function(){
+  //     expect(bot._greetingKeyWords.constructor).toEqual(Array)
+  //   })
+  // });
 
   describe("_curseKeyWords", function(){
     it("will be of the type: array", function(){
